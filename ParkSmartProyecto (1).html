@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Park Smart</title>
+<style>
+:root{--bg:#08111f;--panel:#101e30;--text:#eef5ff;--muted:#a9bbd0;--cyan:#48d7e8;--green:#70e0b0;--line:#263b52}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,Arial,sans-serif}
+.wrap{width:min(1050px,92%);margin:auto}header{position:sticky;top:0;background:#08111fee;border-bottom:1px solid var(--line);z-index:5}
+nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:1.25rem;font-weight:850}.brand span{color:var(--cyan)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}nav a{color:var(--muted);text-decoration:none;font-size:.92rem}nav a:hover{color:var(--cyan)}
+button{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:9px 13px;border-radius:9px;cursor:pointer;font-weight:700}
+.hero{padding:86px 0 70px;background:radial-gradient(ellipse at 80% 15%,#16445a 0,transparent 42%),linear-gradient(140deg,#0b1728,#08111f 65%)}
+.tag{color:var(--cyan);font-size:.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.05;margin:14px 0;max-width:800px}h1 span{color:var(--cyan)}
+.hero p,.lead{color:var(--muted);font-size:1.08rem;max-width:780px}
+section{padding:68px 0;border-bottom:1px solid #1b2b40}h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin:9px 0 16px}h3{margin:0 0 8px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:25px}.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:21px}.card p,.card li{color:var(--muted)}
+.flow{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;margin-top:24px}.step{background:#14263b;border:1px solid var(--line);padding:13px 15px;border-radius:10px;margin:9px 0}.step b{color:var(--cyan);margin-right:10px}.arrow{text-align:center;color:var(--green)}
+.example{border-left:3px solid var(--green);background:#102b2a;padding:15px 18px;border-radius:0 10px 10px 0;margin-top:18px}
+.team{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.person{background:var(--panel);border:1px solid var(--line);padding:12px 16px;border-radius:10px}
+footer{padding:25px 0;color:var(--muted);font-size:.9rem}
+@media(max-width:760px){nav ul{display:none}.grid{grid-template-columns:1fr}.hero{padding:60px 0}}
+</style>
+</head>
+<body class="">
+<header><div class="wrap"><nav>
+<div class="brand">PARK <span>SMART</span></div>
+<ul><li><a href="#abstract">Abstract</a></li><li><a href="#problema">El Problema</a></li><li><a href="#solucion">Nuestra Solución</a></li><li><a href="#impacto">Impacto Esperado</a></li><li><a href="#abstract">Abstract</a></li><li><a href="#equipo">Equipo</a></li></ul>
+
+</nav></div></header>
+<main>
+<div class="hero"><div class="wrap">
+<div class="tag" data-editable="" contenteditable="false">Proyecto tecnológico · IoT e inteligencia artificial</div>
+<h1 data-editable="" contenteditable="false">Encuentra tu espacio.<br><span>Sin perder tiempo.</span></h1>
+<p data-editable="" contenteditable="false">Park Smart es un prototipo de parqueadero inteligente que detecta espacios libres y ocupados mediante sensores infrarrojos y Arduino, y estima cuándo podría liberarse un espacio cuando todos están ocupados.</p>
+</div></div>
+
+
+
+<section id="problema"><div class="wrap">
+<div class="tag">01 · El Problema</div>
+<h2 data-editable="" contenteditable="false">Buscar parqueadero no debería ser una aventura.</h2>
+<p class="lead" data-editable="" contenteditable="false">En muchos parqueaderos, los conductores pierden tiempo buscando un cupo y no tienen certeza de cuántos espacios están disponibles. Además, no siempre existe un registro sencillo de cada parqueadero, como su nombre, capacidad y tarifa.</p>
+<p data-editable="" contenteditable="false">El proyecto busca responder a la siguiente pregunta: ¿cómo detectar automáticamente y a bajo costo qué espacios están libres u ocupados, mostrarlo en un computador y estimar cuándo se liberará un espacio cuando todos estén ocupados?</p>
+</div></section>
+
+<section id="solucion"><div class="wrap">
+<div class="tag">02 · Nuestra Solución</div>
+<h2 data-editable="" contenteditable="false">Detección automática y estimación con IA básica.</h2>
+<p class="lead" data-editable="" contenteditable="false">La solución seleccionada utiliza seis sensores infrarrojos FC-51, una placa Arduino Uno R3 y un programa en el computador. Cada sensor detecta si un espacio está ocupado y envía una señal digital al Arduino. La placa transmite los datos al computador mediante un cable USB.</p>
+<div class="flow">
+<div class="step"><b>01</b><span data-editable="" contenteditable="false">Los sensores FC-51 detectan la presencia o ausencia de un vehículo en cada espacio.</span></div>
+<div class="arrow">↓</div>
+<div class="step"><b>02</b><span data-editable="" contenteditable="false">Arduino Uno R3 recibe las señales de los seis sensores.</span></div>
+<div class="arrow">↓</div>
+<div class="step"><b>03</b><span data-editable="" contenteditable="false">Arduino envía los estados al computador por medio de USB.</span></div>
+<div class="arrow">↓</div>
+<div class="step"><b>04</b><span data-editable="" contenteditable="false">El software calcula los espacios libres y ocupados y muestra la información en la terminal.</span></div>
+<div class="arrow">↓</div>
+<div class="step"><b>05</b><span data-editable="" contenteditable="false">Cuando todos los espacios están ocupados, el sistema estima en cuántos segundos se liberará el primero.</span></div>
+</div>
+<h3 style="margin-top:28px" data-editable="" contenteditable="false">¿Cómo funciona el componente de IA?</h3>
+<p class="lead" data-editable="" contenteditable="false">El sistema está pensado para conductores que buscan un espacio disponible y para el personal que administra un parqueadero pequeño. La información se consulta localmente en la terminal de un computador. El software utiliza un modelo estadístico básico que aprende del tiempo que los vehículos permanecen en cada espacio. Cada vez que un vehículo sale, se registra la duración de su ocupación y se actualiza el promedio de los tiempos registrados.</p>
+<div class="grid">
+<article class="card"><h3 data-editable="" contenteditable="false">Datos</h3><p data-editable="" contenteditable="false">Duración en segundos de cada ocupación, medida por un cronómetro para cada espacio.</p></article>
+<article class="card"><h3 data-editable="" contenteditable="false">Modelo</h3><p data-editable="" contenteditable="false">Promedio de las duraciones de ocupación registradas.</p></article>
+<article class="card"><h3 data-editable="" contenteditable="false">Predicción</h3><p data-editable="" contenteditable="false">Para cada espacio ocupado se calcula: tiempo restante estimado = promedio de ocupación − tiempo que lleva ocupado. El menor resultado no negativo estima cuándo se liberará el primer espacio.</p></article>
+</div>
+<div class="example" data-editable="" contenteditable="false"><b>Ejemplo:</b> con duraciones de 20, 35, 25 y 30 segundos, el promedio es 27,5 segundos. Si el vehículo más antiguo lleva 20 segundos ocupado, el sistema estima que se liberará un espacio en aproximadamente 8 segundos. Se requieren al menos tres mediciones válidas para generar una predicción. Las ocupaciones menores de dos segundos se descartan.</div>
+</div></section>
+
+<section id="impacto"><div class="wrap">
+<div class="tag">03 · Impacto Esperado</div>
+<h2 data-editable="" contenteditable="false">Una búsqueda más informada y una mejor gestión del parqueadero.</h2>
+<div class="grid">
+<article class="card"><h3 data-editable="" contenteditable="false">Disponibilidad visible</h3><p data-editable="" contenteditable="false">Conocer cuántos espacios están libres y ocupados sin tener que buscarlos uno por uno.</p></article>
+<article class="card"><h3 data-editable="" contenteditable="false">Información organizada</h3><p data-editable="" contenteditable="false">Consultar los datos del parqueadero, como su identificador, nombre, capacidad y tarifa.</p></article>
+<article class="card"><h3 data-editable="" contenteditable="false">Estimación de liberación</h3><p data-editable="" contenteditable="false">Obtener un tiempo aproximado de espera cuando todos los espacios están ocupados.</p></article>
+</div>
+</div></section>
+
+<section id="abstract"><div class="wrap">
+<div class="tag">Abstract</div>
+<h2>Park Smart: Smart Parking Availability and Waiting-Time Estimation</h2>
+<p class="lead" style="max-width:900px">Searching for available parking spaces leads to time loss, and there is no straightforward system for recording the availability or characteristics of each parking space. This paper presents Park Smart, a low-cost prototype designed for drivers looking for an available space and parking-lot staff who need to monitor a small parking facility. The prototype operates on a six-space parking model and displays its information locally on a computer terminal. It automatically detects vacant and occupied spaces and estimates the time until the first space becomes available when the parking lot is full.</p>
+<p style="max-width:900px">After comparing three alternatives (infrared sensors with Arduino, ultrasonic sensors with ESP32 and a web interface, and computer vision), the first option was selected due to its lower cost, reduced complexity, and full compliance with the functional requirements.</p>
+<p style="max-width:900px">The system uses six FC-51 infrared sensors connected to an Arduino Uno R3 board, which transmits a text-based data frame via USB using the format <code>id;v1,v2,...,vn</code>. A computer program validates the parking-space records and incoming data frames, calculates the number of available spaces, and displays the results in the terminal along with each parking space's name and fee.</p>
+<p style="max-width:900px">The artificial intelligence component consists of a basic statistical model. A timer measures the duration of each parking occupancy, and the average occupancy duration is updated whenever a vehicle leaves. For each currently occupied space, the system calculates its estimated remaining time as the average occupancy duration minus the elapsed time for that space. It then selects the smallest non-negative remaining time as the estimate for when the first space will become available. Occupancy periods shorter than two seconds are discarded as possible false readings, and at least three valid measurements are required before generating a prediction.</p>
+<p style="max-width:900px">The prototype demonstrates that an affordable solution based on the Internet of Things (IoT) and basic artificial intelligence can provide parking availability information and estimate waiting times in a small parking-facility context.</p>
+</div></section>
+
+<section id="equipo"><div class="wrap">
+<div class="tag">04 · Equipo Desarrollador</div>
+<h2 data-editable="" contenteditable="false">Equipo Park Smart</h2>
+<div class="team">
+<div class="person" data-editable="" contenteditable="false">Sergio Andrés Silva Rodríguez</div>
+<div class="person" data-editable="" contenteditable="false">Miguel Ángel Salazar Pira</div>
+<div class="person" data-editable="" contenteditable="false">Alejandro Ortegon González</div>
+</div>
+<p class="lead" style="margin-top:20px" data-editable="" contenteditable="false">Universidad Sergio Arboleda · Ingeniería en Ciencias de la Computación e Inteligencia Artificial.</p>
+</div></section>
+</main>
+<footer><div class="wrap">Park Smart</div></footer>
+</body></html>
